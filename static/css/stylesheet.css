@@ -1,0 +1,175 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(/static/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: SourceSans3;
+    src: url(/static/fonts/SourceSans3-Medium.ttf);
+}
+
+@font-face {
+    font-family: SourceSans3Bold;
+    src: url(/static/fonts/SourceSans3-Bold.ttf);
+}
+
+.title {
+    font-size: 5rem;
+    font-family: Montserrat;
+    color: white;
+    /*-webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;*/
+}
+
+.active {
+  opacity      : 1;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+.background {
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 110%;
+    object-fit: cover;
+    z-index: -3;
+    transform: translateZ(-10px) scale(2);
+    transition: opacity 1s linear;
+}
+
+.showing {
+    opacity: 1;
+}
+
+.foreground {
+    position: fixed;
+    height: 50%;
+    width: 50%;
+    top: 5%;
+    object-fit:scale-down;
+    z-index: -1;
+}
+
+.sectionBackground {
+    background-color: #111;
+}
+
+/*#region downbutton */
+.chevron {
+    display:block;
+    position:absolute;
+} .chevron::before {
+    border-style: solid;
+    border-width: 0.2em 0.2em 0 0;
+    font-size: 250%;
+    color: rgba(0,0,0,1);
+    content: '';
+    display: flex;
+    height: 0.55em;
+    vertical-align: top;
+    width: 0.55em;
+    transform: rotate(135deg);
+}
+
+.overlay {
+    position:relative;
+    top: 1000%;
+} .overlay::before {
+    color: rgb(255, 255, 255,1);
+    scale: 90%;
+}
+
+.downButtonClass {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 15%;
+    z-index: -1;
+}
+
+.downPointer {
+    background-color: rgba(0,0,0,0.0);
+    position:absolute;
+    border: none;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/*#endregion*/
+
+.hidden {
+    opacity: 0;
+    transition: all 2s cubic-bezier(.42, 0, 1, 1);
+} .show {
+    opacity: 1;
+}
+
+.discord {
+    font-size: 2.25rem;
+}
+
+*, html {
+    scroll-behavior: smooth !important;
+}
+
+p {
+    font-family: SourceSans3;
+    font-size: 1.75rem;
+    text-align: justify;
+}
+
+a {
+    font-family: SourceSans3;
+    color: #5693a5;
+}
+
+h3 {
+    font-family: SourceSans3Bold;
+    font-size: 2.25rem;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+header:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .3;
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    background-color: #111;
+}
+
+
+
+section {
+    font-size: 2rem;
+    padding: 2rem;
+    padding-inline: 20rem;
+    color: white;
+    position: relative;
+}
