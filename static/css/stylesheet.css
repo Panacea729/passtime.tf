@@ -13,16 +13,29 @@
     src: url(/static/fonts/SourceSans3-Bold.ttf);
 }
 
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleContainer {
+    width: 100%;
+    height: 100%;
+}
+
 .title {
+    text-align: center;
     font-size: 5rem;
     font-family: Montserrat;
     color: white;
+    text-shadow: 0 0 5px #111;
     /*-webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: black;*/
 }
 
 .active {
-  opacity      : 1;
+  opacity: 1;
 }
 
 .wrapper {
@@ -33,13 +46,13 @@
 }
 
 .background {
+    filter: blur(2px);
     opacity: 0;
     position: absolute;
     height: 100%;
     width: 110%;
     object-fit: cover;
-    z-index: -3;
-    transform: translateZ(-10px) scale(2);
+    z-index: -5;
     transition: opacity 1s linear;
 }
 
@@ -48,16 +61,20 @@
 }
 
 .foreground {
+    aspect-ratio: 3 / 1;
     position: fixed;
-    height: 50%;
-    width: 50%;
+    height: 300px;
+    max-width: 40%;
     top: 5%;
-    object-fit:scale-down;
+    object-fit: scale-down;
     z-index: -1;
 }
 
 .sectionBackground {
     background-color: #111;
+    font-size: 1.25rem;
+    width: 40em;
+    max-width: 90%;
 }
 
 /*#region downbutton */
@@ -91,7 +108,7 @@
     justify-content: center;
     align-items: center;
     bottom: 15%;
-    z-index: -1;
+    z-index: 1;
 }
 
 .downPointer {
@@ -119,13 +136,20 @@
     font-size: 2.25rem;
 }
 
+main {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 *, html {
     scroll-behavior: smooth !important;
 }
 
 p {
     font-family: SourceSans3;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     text-align: justify;
 }
 
@@ -140,11 +164,7 @@ h3 {
 }
 
 header {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    height: 80%;
     transform-style: preserve-3d;
     z-index: -1;
 }
@@ -164,12 +184,14 @@ body {
     background-color: #111;
 }
 
-
+iframe {
+    aspect-ratio: 16 / 9;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
 
 section {
     font-size: 2rem;
-    padding: 2rem;
-    padding-inline: 20rem;
     color: white;
     position: relative;
 }
